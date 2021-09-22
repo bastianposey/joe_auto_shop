@@ -56,8 +56,8 @@ class ServiceQuote:
     def get_labor_charges(self):
         return self.__labor_charges
     def get_sales_tax(self):
-        val = float(self.__parts_charges + self.__labor_charges)*.08
-        return val
+        self.__sales_tax = float(self.__parts_charges + self.__labor_charges)*.08
+        return self.__sales_tax
 
     def get_total_charges(self):
         total = self.__sales_tax + self.__labor_charges + self.__parts_charges
